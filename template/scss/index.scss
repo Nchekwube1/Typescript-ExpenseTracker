@@ -1,0 +1,451 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@mixin flex($rel, $jc, $ai) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  position: $rel;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.head {
+  width: 100%;
+  height: 75px;
+  background-color: #fff;
+  box-shadow: 3px 4px 4px #d5d5d5;
+  @include flex(relative, flex-start, center);
+  //   font-family: "Roboto-Regular";
+  //   font-family: "Courgette-Regular";
+  //   font-family: "Lobster-Regular";
+  //   font-family: "Ranchers-Regular";
+  //   font-family: "Poppins-Light";
+  & .text {
+    // margin-left: 30px;
+    width: 25%;
+    @include flex(relative, center, center);
+
+    & h1 {
+      font-size: 35px;
+      margin-right: 6px;
+      color: rgb(255, 0, 51);
+      font-family: "Lobster-Regular";
+      font-family: "Courgette-Regular";
+
+      text-transform: uppercase;
+
+      & span {
+        font-size: 23px;
+        color: black;
+        font-family: "Courgette-Regular";
+        font-family: "Ranchers-Regular";
+        text-transform: lowercase;
+        text-indent: 13px;
+      }
+    }
+  }
+}
+.main {
+  @include flex(relative, center, center);
+  width: 100%;
+  height: calc(100vh - 75px);
+  & .input {
+    @include flex(relative, center, center);
+    width: 35%;
+    // margin-left: 5%;
+    flex-direction: column;
+    height: 100%;
+    // margin-top: 20px;
+    //   border-bottom: 1px solid black;
+    // box-shadow: 4px 5px 7px #f5f5f5;
+    & .income {
+      @include flex(relative, center, center);
+      width: 100%;
+      height: 40%;
+      flex-direction: column;
+      // background-color: green;
+      & .IF {
+        @include flex(relative, center, center);
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        & input {
+          position: relative;
+          width: 80%;
+          height: 40px;
+          //   border: 1px solid lime;
+          margin-bottom: 20px;
+          border: none;
+          // background-color: rgba(255, 255, 255, 0.7);
+          background-color: rgb(242, 242, 242);
+          outline: none;
+          border-radius: 7px;
+          text-indent: 6px;
+          text-transform: capitalize;
+          font-size: 16px;
+          font-family: "Poppins-Light";
+          &[type="number"] {
+            -moz-appearance: textfield;
+            // -webkit-appearance: none;
+          }
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          &.err {
+            border: 1px solid red;
+            border-radius: 7px;
+          }
+          &.suc {
+            border: 1px solid red;
+            border-radius: 7px;
+          }
+        }
+        & button {
+          text-transform: capitalize;
+          font-size: 19px;
+          font-family: "Poppins-Light";
+          border-radius: 7px;
+          outline: none;
+          width: 22%;
+          height: 40px;
+          background-color: rgb(55, 189, 42);
+          color: white;
+          border: none;
+          cursor: pointer;
+          transition: all 0.25s linear;
+          &:hover {
+            // background-color: white;
+            // color: black;
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+    & .expense {
+      @include flex(relative, center, center);
+      width: 100%;
+      height: 40%;
+      flex-direction: column;
+      & .EF {
+        @include flex(relative, center, center);
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        & input {
+          position: relative;
+          width: 80%;
+          height: 40px;
+          //   border: 1px solid lime;
+          margin-bottom: 20px;
+          //   appearance: textfield;
+          border: none;
+          // background-color: rgba(255, 255, 255, 0.7);
+          background-color: rgb(242, 242, 242);
+          outline: none;
+          border-radius: 7px;
+          text-indent: 6px;
+          text-transform: capitalize;
+          font-size: 16px;
+          font-family: "Poppins-Light";
+          &[type="number"] {
+            -moz-appearance: textfield;
+            // -webkit-appearance: none;
+          }
+          &.err {
+            border: 1px solid red;
+            border-radius: 7px;
+          }
+          &.suc {
+            border: 1px solid red;
+            border-radius: 7px;
+          }
+        }
+        & button {
+          text-transform: capitalize;
+          font-size: 19px;
+          font-family: "Poppins-Light";
+          border-radius: 7px;
+          outline: none;
+          width: 22%;
+          height: 40px;
+          background-color: rgb(255, 4, 4);
+          color: white;
+          border: none;
+          cursor: pointer;
+          transition: all 0.25s linear;
+          &:hover {
+            // background-color: white;
+            // color: black;
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+  }
+
+  .every {
+    @include flex(relative, center, flex-start);
+    width: 60%;
+    flex-direction: column;
+    margin-left: 2.5%;
+    height: calc(100vh - 75px);
+
+    // margin-top: 2%;
+    // height: auto;
+    & .outl {
+      @include flex(relative, flex-start, center);
+      width: 100%;
+      height: 150px;
+      //   background-color: rgba(0, 0, 0, 0.5);
+      margin-top: 30px;
+      flex-direction: column;
+      & .balance {
+        @include flex(relative, center, center);
+        width: 100%;
+        height: 50%;
+        // background-color: red;
+        text-transform: uppercase;
+        & h1 {
+          font-size: 42px;
+          font-family: "Poppins-Light";
+        }
+      }
+      & .expinc {
+        @include flex(relative, center, center);
+        width: 100%;
+        height: 50%;
+        & .inc {
+          @include flex(relative, center, center);
+          width: 40%;
+          height: 100%;
+          & h1 {
+            font-size: 29px;
+            font-family: "Poppins-Light";
+            text-transform: capitalize;
+          }
+        }
+        & .exp {
+          @include flex(relative, center, center);
+          width: 40%;
+          height: 100%;
+          & h1 {
+            font-size: 29px;
+            font-family: "Poppins-Light";
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+
+    & .details {
+      @include flex(relative, center, flex-start);
+      //   background-color: red;
+
+      margin-left: 2%;
+      width: 96%;
+      margin-top: 30px;
+      height: calc(100vh - 285px);
+      margin-top: 50px;
+      & .detincome {
+        @include flex(relative, center, center);
+        width: 50%;
+        height: auto;
+        flex-direction: column;
+        // background-color: #d5d5d5;
+        & .eachinc {
+          @include flex(relative, flex-start, center);
+          //   flex-direction: column;
+          width: 95%;
+          height: 90px;
+          //   background-color: #f5f5f5;
+
+          border-bottom: 2px solid rgb(55, 189, 42);
+          //   background-color: red;
+          & .moneyi {
+            @include flex(relative, center, center);
+            flex-direction: column;
+            width: 85%;
+            height: 100%;
+            // background-color: green;
+            & .amount {
+              width: 100%;
+              height: auto;
+              position: relative;
+              color: rgb(55, 189, 42);
+              & h1 {
+                font-size: 26px;
+                text-transform: uppercase;
+                font-family: "Poppins-Light";
+                text-indent: 14px;
+              }
+            }
+            & .description {
+              width: 100%;
+              height: auto;
+              position: relative;
+              & h1 {
+                font-size: 23px;
+                text-transform: capitalize;
+                font-family: "Poppins-Light";
+                text-indent: 14px;
+              }
+            }
+          }
+          & .eddeli {
+            @include flex(relative, center, flex-end);
+            width: 20%;
+            height: 100%;
+
+            & #edit {
+              position: relative;
+              width: 40%;
+              height: 50%;
+              margin-right: 5%;
+              cursor: pointer;
+              z-index: 20;
+              &::before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                // background-color: red;
+                z-index: 20;
+              }
+              & svg {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                z-index: -2;
+              }
+            }
+            & #del {
+              position: relative;
+              width: 40%;
+              height: 50%;
+              cursor: pointer;
+              margin-right: 5%;
+
+              //   border: 1px solid black;
+              &::before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                // background-color: red;
+                z-index: 20;
+              }
+              & svg {
+                position: relative;
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+      & .detexpense {
+        @include flex(relative, center, center);
+        width: 50%;
+        height: auto;
+        flex-direction: column;
+        & .eachexp {
+          @include flex(relative, flex-start, center);
+          //   background-color: #f5f5f5;
+          //   flex-direction: column;
+          width: 95%;
+          height: 90px;
+          border-bottom: 2px solid rgb(252, 8, 8);
+          //   background-color: red;
+          & .moneye {
+            @include flex(relative, center, center);
+            flex-direction: column;
+            width: 80%;
+            height: auto;
+            // background-color: green;
+            & .amount {
+              width: 100%;
+              height: auto;
+              position: relative;
+              color: rgb(252, 8, 8);
+              & h1 {
+                font-size: 26px;
+                text-transform: uppercase;
+                font-family: "Poppins-Light";
+                text-indent: 14px;
+              }
+            }
+            & .descriptione {
+              width: 100%;
+              height: auto;
+              position: relative;
+              // background-color: #d5d5d5;
+              & h1 {
+                font-size: 23px;
+                text-transform: capitalize;
+                font-family: "Poppins-Light";
+                text-indent: 14px;
+              }
+            }
+          }
+          & .eddele {
+            @include flex(relative, center, flex-end);
+            width: 20%;
+            height: 100%;
+            // background-color: red;
+            & #edite {
+              position: relative;
+              width: 40%;
+              height: 50%;
+              margin-right: 5%;
+              //   border: 1px solid black;
+              cursor: pointer;
+              &::before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                z-index: 20;
+              }
+              & svg {
+                position: relative;
+                width: 100%;
+                height: 100%;
+              }
+            }
+            & #dele {
+              position: relative;
+              width: 40%;
+              height: 50%;
+              cursor: pointer;
+
+              margin-right: 5%;
+              //   border: 1px solid black;
+              &::before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                z-index: 20;
+              }
+
+              & svg {
+                position: relative;
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,698 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.head {
+  width: 100%;
+  height: 75px;
+  background-color: #fff;
+  -webkit-box-shadow: 3px 4px 4px #d5d5d5;
+          box-shadow: 3px 4px 4px #d5d5d5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.head .text {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.head .text h1 {
+  font-size: 35px;
+  margin-right: 6px;
+  color: #ff0033;
+  font-family: "Lobster-Regular";
+  font-family: "Courgette-Regular";
+  text-transform: uppercase;
+}
+
+.head .text h1 span {
+  font-size: 23px;
+  color: black;
+  font-family: "Courgette-Regular";
+  font-family: "Ranchers-Regular";
+  text-transform: lowercase;
+  text-indent: 13px;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 75px);
+}
+
+.main .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 35%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.main .input .income {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100%;
+  height: 40%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .input .income .IF {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.main .input .income .IF input {
+  position: relative;
+  width: 80%;
+  height: 40px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #f2f2f2;
+  outline: none;
+  border-radius: 7px;
+  text-indent: 6px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-family: "Poppins-Light";
+}
+
+.main .input .income .IF input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.main .input .income .IF input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.main .input .income .IF input.err {
+  border: 1px solid red;
+  border-radius: 7px;
+}
+
+.main .input .income .IF input.suc {
+  border: 1px solid red;
+  border-radius: 7px;
+}
+
+.main .input .income .IF button {
+  text-transform: capitalize;
+  font-size: 19px;
+  font-family: "Poppins-Light";
+  border-radius: 7px;
+  outline: none;
+  width: 22%;
+  height: 40px;
+  background-color: #37bd2a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+
+.main .input .income .IF button:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.main .input .expense {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100%;
+  height: 40%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .input .expense .EF {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.main .input .expense .EF input {
+  position: relative;
+  width: 80%;
+  height: 40px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #f2f2f2;
+  outline: none;
+  border-radius: 7px;
+  text-indent: 6px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-family: "Poppins-Light";
+}
+
+.main .input .expense .EF input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.main .input .expense .EF input.err {
+  border: 1px solid red;
+  border-radius: 7px;
+}
+
+.main .input .expense .EF input.suc {
+  border: 1px solid red;
+  border-radius: 7px;
+}
+
+.main .input .expense .EF button {
+  text-transform: capitalize;
+  font-size: 19px;
+  font-family: "Poppins-Light";
+  border-radius: 7px;
+  outline: none;
+  width: 22%;
+  height: 40px;
+  background-color: #ff0404;
+  color: white;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+
+.main .input .expense .EF button:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.main .every {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+  width: 60%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 2.5%;
+  height: calc(100vh - 75px);
+}
+
+.main .every .outl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100%;
+  height: 150px;
+  margin-top: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .every .outl .balance {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100%;
+  height: 50%;
+  text-transform: uppercase;
+}
+
+.main .every .outl .balance h1 {
+  font-size: 42px;
+  font-family: "Poppins-Light";
+}
+
+.main .every .outl .expinc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100%;
+  height: 50%;
+}
+
+.main .every .outl .expinc .inc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 40%;
+  height: 100%;
+}
+
+.main .every .outl .expinc .inc h1 {
+  font-size: 29px;
+  font-family: "Poppins-Light";
+  text-transform: capitalize;
+}
+
+.main .every .outl .expinc .exp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 40%;
+  height: 100%;
+}
+
+.main .every .outl .expinc .exp h1 {
+  font-size: 29px;
+  font-family: "Poppins-Light";
+  text-transform: capitalize;
+}
+
+.main .every .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+  margin-left: 2%;
+  width: 96%;
+  margin-top: 30px;
+  height: calc(100vh - 285px);
+  margin-top: 50px;
+}
+
+.main .every .details .detincome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 50%;
+  height: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .every .details .detincome .eachinc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 95%;
+  height: 90px;
+  border-bottom: 2px solid #37bd2a;
+}
+
+.main .every .details .detincome .eachinc .moneyi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 85%;
+  height: 100%;
+}
+
+.main .every .details .detincome .eachinc .moneyi .amount {
+  width: 100%;
+  height: auto;
+  position: relative;
+  color: #37bd2a;
+}
+
+.main .every .details .detincome .eachinc .moneyi .amount h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-family: "Poppins-Light";
+  text-indent: 14px;
+}
+
+.main .every .details .detincome .eachinc .moneyi .description {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.main .every .details .detincome .eachinc .moneyi .description h1 {
+  font-size: 23px;
+  text-transform: capitalize;
+  font-family: "Poppins-Light";
+  text-indent: 14px;
+}
+
+.main .every .details .detincome .eachinc .eddeli {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+  width: 20%;
+  height: 100%;
+}
+
+.main .every .details .detincome .eachinc .eddeli #edit {
+  position: relative;
+  width: 40%;
+  height: 50%;
+  margin-right: 5%;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.main .every .details .detincome .eachinc .eddeli #edit::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+
+.main .every .details .detincome .eachinc .eddeli #edit svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.main .every .details .detincome .eachinc .eddeli #del {
+  position: relative;
+  width: 40%;
+  height: 50%;
+  cursor: pointer;
+  margin-right: 5%;
+}
+
+.main .every .details .detincome .eachinc .eddeli #del::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+
+.main .every .details .detincome .eachinc .eddeli #del svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.main .every .details .detexpense {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 50%;
+  height: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .every .details .detexpense .eachexp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 95%;
+  height: 90px;
+  border-bottom: 2px solid #fc0808;
+}
+
+.main .every .details .detexpense .eachexp .moneye {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  height: auto;
+}
+
+.main .every .details .detexpense .eachexp .moneye .amount {
+  width: 100%;
+  height: auto;
+  position: relative;
+  color: #fc0808;
+}
+
+.main .every .details .detexpense .eachexp .moneye .amount h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-family: "Poppins-Light";
+  text-indent: 14px;
+}
+
+.main .every .details .detexpense .eachexp .moneye .descriptione {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.main .every .details .detexpense .eachexp .moneye .descriptione h1 {
+  font-size: 23px;
+  text-transform: capitalize;
+  font-family: "Poppins-Light";
+  text-indent: 14px;
+}
+
+.main .every .details .detexpense .eachexp .eddele {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+  width: 20%;
+  height: 100%;
+}
+
+.main .every .details .detexpense .eachexp .eddele #edite {
+  position: relative;
+  width: 40%;
+  height: 50%;
+  margin-right: 5%;
+  cursor: pointer;
+}
+
+.main .every .details .detexpense .eachexp .eddele #edite::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 20;
+}
+
+.main .every .details .detexpense .eachexp .eddele #edite svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.main .every .details .detexpense .eachexp .eddele #dele {
+  position: relative;
+  width: 40%;
+  height: 50%;
+  cursor: pointer;
+  margin-right: 5%;
+}
+
+.main .every .details .detexpense .eachexp .eddele #dele::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 20;
+}
+
+.main .every .details .detexpense .eachexp .eddele #dele svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=index.css.map */
