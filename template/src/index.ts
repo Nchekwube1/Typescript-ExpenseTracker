@@ -21,9 +21,6 @@ interface objProp {
 }
 
 type eachObj=objProp;
-
-
-
 const balance = ()=>{
      let bud = 0;
      let expe = 0;
@@ -38,6 +35,133 @@ const balance = ()=>{
      bal.innerText = (bud - expe).toString()
      
 }
+const setItem= ()=>{
+  localStorage.setItem(
+    "expArr" , JSON.stringify(expArr)
+  )
+  localStorage.setItem(
+    "budArr" , JSON.stringify(budArr)
+  )
+}
+const getItem = ()=>{
+ const e =  JSON.parse(localStorage.getItem("expArr"))
+ const b =JSON.parse( localStorage.getItem("budArr"))
+ expArr = e;
+ budArr = b;
+
+   income.innerHTML = ""
+ const mapper =      budArr.forEach((each)=>{
+      let {id , amt, desc } = each;
+
+    const  a  =  `
+      <div class="eachinc">
+              <div class="moneyi">
+                <div class="amount">
+                  <h1>+$<span class="amt">${amt}</span></h1>
+                </div>
+                <div class="description"><h1>${desc}</h1></div>
+              </div>
+              <div class="eddeli">
+                <div id="edit" data-id =${id}>
+                  <svg
+                    class="esv"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="../../external.html?link=http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.4 7.34L16.66 4.6A2 2 0 0 0 14 4.53l-9 9a2 2 0 0 0-.57 1.21L4 18.91a1 1 0 0 0 .29.8A1 1 0 0 0 5 20h.09l4.17-.38a2 2 0 0 0 1.21-.57l9-9a1.92 1.92 0 0 0-.07-2.71zM9.08 17.62l-3 .28.27-3L12 9.32l2.7 2.7zM16 10.68L13.32 8l1.95-2L18 8.73z"
+                    ></path>
+                  </svg>
+                </div>
+                <div id="del" data-id =${id}>
+                  <svg
+                    class="esd"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="../../external.html?link=http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M21 6h-5V4.33A2.42 2.42 0 0 0 13.5 2h-3A2.42 2.42 0 0 0 8 4.33V6H3a1 1 0 0 0 0 2h1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8h1a1 1 0 0 0 0-2zM10 4.33c0-.16.21-.33.5-.33h3c.29 0 .5.17.5.33V6h-4zM18 19a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V8h12z"
+                    ></path>
+                    <path
+                      d="M9 17a1 1 0 0 0 1-1v-4a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1z"
+                    ></path>
+                    <path
+                      d="M15 17a1 1 0 0 0 1-1v-4a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>`
+            income.innerHTML += a
+
+    
+    
+})
+
+ const emapper =      expArr.forEach((each)=>{
+      let {id , amt, desc } = each;
+
+    const  a  = `
+      <div class="eachexp">
+              <div class="moneye">
+                <div class="amount">
+                  <h1>-$<span class="amte">${amt}</span></h1>
+                </div>
+                <div class="descriptione">
+                  <h1 class="expe">${desc}</h1>
+                </div>
+              </div>
+              <div class="eddele">
+                <div id="edite" data-id =${id}>
+                  <svg
+                    class="esv"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="../../external.html?link=http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.4 7.34L16.66 4.6A2 2 0 0 0 14 4.53l-9 9a2 2 0 0 0-.57 1.21L4 18.91a1 1 0 0 0 .29.8A1 1 0 0 0 5 20h.09l4.17-.38a2 2 0 0 0 1.21-.57l9-9a1.92 1.92 0 0 0-.07-2.71zM9.08 17.62l-3 .28.27-3L12 9.32l2.7 2.7zM16 10.68L13.32 8l1.95-2L18 8.73z"
+                    ></path>
+                  </svg>
+                </div>
+                <div id="dele" data-id =${id}>
+                  <svg
+                    class="esd"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="../../external.html?link=http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M21 6h-5V4.33A2.42 2.42 0 0 0 13.5 2h-3A2.42 2.42 0 0 0 8 4.33V6H3a1 1 0 0 0 0 2h1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8h1a1 1 0 0 0 0-2zM10 4.33c0-.16.21-.33.5-.33h3c.29 0 .5.17.5.33V6h-4zM18 19a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V8h12z"
+                    ></path>
+                    <path
+                      d="M9 17a1 1 0 0 0 1-1v-4a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1z"
+                    ></path>
+                    <path
+                      d="M15 17a1 1 0 0 0 1-1v-4a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>`
+            expense.innerHTML += a
+
+})
+balance()
+}
+getItem()
+
+
 
 type one ={
     id: string,
@@ -65,7 +189,6 @@ IF.addEventListener("submit",(e)=>{
    let val = parseInt(BA.value)
    let des:string = BD.value
    if(des ==""){
-    //    console.log("true");
     BD.classList.add("err") 
    setTimeout(() => {
     BD.classList.remove("err") 
@@ -81,7 +204,8 @@ IF.addEventListener("submit",(e)=>{
        }
 
        budArr.push(ob)
-      balance()       
+      balance()     
+      setItem()  
    }
   
     BA.value=""
@@ -142,6 +266,8 @@ IF.addEventListener("submit",(e)=>{
     
 })
   
+
+
 })
 
  
@@ -171,9 +297,8 @@ EF.addEventListener("submit",(e)=>{
        }
 
        expArr.push(ob)
-       console.log(expArr);
        balance()
-       
+       setItem()
    }
     EA.value=""
     ED.value=""
@@ -250,6 +375,7 @@ if(a.id === "edit"){
  budArr = newArr;
  const {id,amt,desc} = editArr[0]
  balance()
+ setItem()
   BA.value =amt.toString()
   BD.value = desc
 
@@ -318,6 +444,7 @@ else if (a.id === "del"){
 
   budArr = newArr
 balance()
+setItem()
     income.innerHTML = ""
  const mapper =      budArr.forEach((each)=>{
       let {id , amt, desc } = each;
@@ -390,6 +517,7 @@ if(a.id === "edite"){
   expArr = newArr
   const {id,amt,desc} = editArr[0]
   balance()
+  setItem()
     
 
     EA.value = amt.toString()
@@ -461,7 +589,7 @@ else if (a.id === "dele"){
   expArr = newArr
   
   balance()
-
+setItem()
 
       expense.innerHTML = ""
  const mapper =      expArr.forEach((each)=>{

@@ -25,6 +25,29 @@ var balance = function () {
     exp.innerText = expe.toString();
     bal.innerText = (bud - expe).toString();
 };
+var setItem = function () {
+    localStorage.setItem("expArr", JSON.stringify(expArr));
+    localStorage.setItem("budArr", JSON.stringify(budArr));
+};
+var getItem = function () {
+    var e = JSON.parse(localStorage.getItem("expArr"));
+    var b = JSON.parse(localStorage.getItem("budArr"));
+    expArr = e;
+    budArr = b;
+    income.innerHTML = "";
+    var mapper = budArr.forEach(function (each) {
+        var id = each.id, amt = each.amt, desc = each.desc;
+        var a = "\n      <div class=\"eachinc\">\n              <div class=\"moneyi\">\n                <div class=\"amount\">\n                  <h1>+$<span class=\"amt\">" + amt + "</span></h1>\n                </div>\n                <div class=\"description\"><h1>" + desc + "</h1></div>\n              </div>\n              <div class=\"eddeli\">\n                <div id=\"edit\" data-id =" + id + ">\n                  <svg\n                    class=\"esv\"\n                    width=\"1em\"\n                    height=\"1em\"\n                    viewBox=\"0 0 24 24\"\n                    fill=\"currentColor\"\n                    xmlns=\"../../external.html?link=http://www.w3.org/2000/svg\"\n                  >\n                    <path\n                      d=\"M19.4 7.34L16.66 4.6A2 2 0 0 0 14 4.53l-9 9a2 2 0 0 0-.57 1.21L4 18.91a1 1 0 0 0 .29.8A1 1 0 0 0 5 20h.09l4.17-.38a2 2 0 0 0 1.21-.57l9-9a1.92 1.92 0 0 0-.07-2.71zM9.08 17.62l-3 .28.27-3L12 9.32l2.7 2.7zM16 10.68L13.32 8l1.95-2L18 8.73z\"\n                    ></path>\n                  </svg>\n                </div>\n                <div id=\"del\" data-id =" + id + ">\n                  <svg\n                    class=\"esd\"\n                    width=\"1em\"\n                    height=\"1em\"\n                    viewBox=\"0 0 24 24\"\n                    fill=\"currentColor\"\n                    xmlns=\"../../external.html?link=http://www.w3.org/2000/svg\"\n                  >\n                    <path\n                      d=\"M21 6h-5V4.33A2.42 2.42 0 0 0 13.5 2h-3A2.42 2.42 0 0 0 8 4.33V6H3a1 1 0 0 0 0 2h1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8h1a1 1 0 0 0 0-2zM10 4.33c0-.16.21-.33.5-.33h3c.29 0 .5.17.5.33V6h-4zM18 19a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V8h12z\"\n                    ></path>\n                    <path\n                      d=\"M9 17a1 1 0 0 0 1-1v-4a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1z\"\n                    ></path>\n                    <path\n                      d=\"M15 17a1 1 0 0 0 1-1v-4a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1z\"\n                    ></path>\n                  </svg>\n                </div>\n              </div>\n            </div>";
+        income.innerHTML += a;
+    });
+    var emapper = expArr.forEach(function (each) {
+        var id = each.id, amt = each.amt, desc = each.desc;
+        var a = "\n      <div class=\"eachexp\">\n              <div class=\"moneye\">\n                <div class=\"amount\">\n                  <h1>-$<span class=\"amte\">" + amt + "</span></h1>\n                </div>\n                <div class=\"descriptione\">\n                  <h1 class=\"expe\">" + desc + "</h1>\n                </div>\n              </div>\n              <div class=\"eddele\">\n                <div id=\"edite\" data-id =" + id + ">\n                  <svg\n                    class=\"esv\"\n                    width=\"1em\"\n                    height=\"1em\"\n                    viewBox=\"0 0 24 24\"\n                    fill=\"currentColor\"\n                    xmlns=\"../../external.html?link=http://www.w3.org/2000/svg\"\n                  >\n                    <path\n                      d=\"M19.4 7.34L16.66 4.6A2 2 0 0 0 14 4.53l-9 9a2 2 0 0 0-.57 1.21L4 18.91a1 1 0 0 0 .29.8A1 1 0 0 0 5 20h.09l4.17-.38a2 2 0 0 0 1.21-.57l9-9a1.92 1.92 0 0 0-.07-2.71zM9.08 17.62l-3 .28.27-3L12 9.32l2.7 2.7zM16 10.68L13.32 8l1.95-2L18 8.73z\"\n                    ></path>\n                  </svg>\n                </div>\n                <div id=\"dele\" data-id =" + id + ">\n                  <svg\n                    class=\"esd\"\n                    width=\"1em\"\n                    height=\"1em\"\n                    viewBox=\"0 0 24 24\"\n                    fill=\"currentColor\"\n                    xmlns=\"../../external.html?link=http://www.w3.org/2000/svg\"\n                  >\n                    <path\n                      d=\"M21 6h-5V4.33A2.42 2.42 0 0 0 13.5 2h-3A2.42 2.42 0 0 0 8 4.33V6H3a1 1 0 0 0 0 2h1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8h1a1 1 0 0 0 0-2zM10 4.33c0-.16.21-.33.5-.33h3c.29 0 .5.17.5.33V6h-4zM18 19a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V8h12z\"\n                    ></path>\n                    <path\n                      d=\"M9 17a1 1 0 0 0 1-1v-4a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1z\"\n                    ></path>\n                    <path\n                      d=\"M15 17a1 1 0 0 0 1-1v-4a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1z\"\n                    ></path>\n                  </svg>\n                </div>\n              </div>\n            </div>";
+        expense.innerHTML += a;
+    });
+    balance();
+};
+getItem();
 function uuid() {
     var diff = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "a", "b", "c", "d", "e", "f", "l", "k"];
     var id = "";
@@ -38,7 +61,6 @@ IF.addEventListener("submit", function (e) {
     var val = parseInt(BA.value);
     var des = BD.value;
     if (des == "") {
-        //    console.log("true");
         BD.classList.add("err");
         setTimeout(function () {
             BD.classList.remove("err");
@@ -52,6 +74,7 @@ IF.addEventListener("submit", function (e) {
         };
         budArr.push(ob);
         balance();
+        setItem();
     }
     BA.value = "";
     BD.value = "";
@@ -80,8 +103,8 @@ EF.addEventListener("submit", function (e) {
             desc: des
         };
         expArr.push(ob);
-        console.log(expArr);
         balance();
+        setItem();
     }
     EA.value = "";
     ED.value = "";
@@ -101,6 +124,7 @@ income.addEventListener("click", function (e) {
         budArr = newArr;
         var _a = editArr[0], id = _a.id, amt = _a.amt, desc = _a.desc;
         balance();
+        setItem();
         BA.value = amt.toString();
         BD.value = desc;
         income.innerHTML = "";
@@ -116,6 +140,7 @@ income.addEventListener("click", function (e) {
         // const editArr = budArr.filter(each => each.id === id)
         budArr = newArr;
         balance();
+        setItem();
         income.innerHTML = "";
         var mapper = budArr.forEach(function (each) {
             var id = each.id, amt = each.amt, desc = each.desc;
@@ -133,6 +158,7 @@ expense.addEventListener("click", function (e) {
         expArr = newArr;
         var _a = editArr[0], id = _a.id, amt = _a.amt, desc = _a.desc;
         balance();
+        setItem();
         EA.value = amt.toString();
         ED.value = desc;
         expense.innerHTML = "";
@@ -148,6 +174,7 @@ expense.addEventListener("click", function (e) {
         var editArr = expArr.filter(function (each) { return each.id === ied_3; });
         expArr = newArr;
         balance();
+        setItem();
         expense.innerHTML = "";
         var mapper = expArr.forEach(function (each) {
             var id = each.id, amt = each.amt, desc = each.desc;
