@@ -59,12 +59,32 @@ var getItem = function () {
 };
 getItem();
 function uuid() {
-    var diff = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "a", "b", "c", "d", "e", "f", "l", "k"];
+    var diff = [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "0",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "l",
+        "k",
+    ];
     var id = "";
     for (var i = 0; i < 9; i++) {
         id += diff[Math.floor(Math.random() * diff.length)];
     }
-    return (id);
+    return id;
 }
 IF.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -80,7 +100,7 @@ IF.addEventListener("submit", function (e) {
         var ob = {
             id: uuid(),
             amt: val,
-            desc: des
+            desc: des,
         };
         budArr.push(ob);
         balance();
@@ -96,7 +116,6 @@ EF.addEventListener("submit", function (e) {
     var val = parseInt(EA.value);
     var des = ED.value;
     if (des == "") {
-        //    console.log("true");
         ED.classList.add("err");
         setTimeout(function () {
             ED.classList.remove("err");
@@ -106,7 +125,7 @@ EF.addEventListener("submit", function (e) {
         var ob = {
             id: uuid(),
             amt: val,
-            desc: des
+            desc: des,
         };
         expArr.push(ob);
         balance();
@@ -139,7 +158,6 @@ income.addEventListener("click", function (e) {
     else if (a.id === "del") {
         var id_1 = a.dataset.id;
         var newArr = budArr.filter(function (each) { return each.id !== id_1; });
-        // const editArr = budArr.filter(each => each.id === id)
         budArr = newArr;
         balance();
         setItem();
